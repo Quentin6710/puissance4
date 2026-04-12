@@ -1,0 +1,32 @@
+package fr.quentin.puissance4;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+
+public class PlayerSetupHvH implements Initializable {
+
+    @FXML
+    private TextField p1Name;
+    @FXML
+    private TextField p2Name;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }
+
+    @FXML
+    public void onBack(ActionEvent event) throws IOException {
+        GameView.setRoot("gameset");
+    }
+
+    @FXML
+    public void onPlay(ActionEvent event) {
+        // on verra plus tard
+    }
+
+}

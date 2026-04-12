@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="25" prefHeight="350" prefWidth="500"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/10.0.2-internal"
+      fx:controller="fr.quentin.puissance4.PlayerSetupHvAI"
+      stylesheets="@../styles/Styles.css"
+      style="-fx-padding: 30; -fx-background-color: #1a1a2e;">
+
+    <Label text="Player Setup" styleClass="title-label" />
+
+    <HBox alignment="CENTER" spacing="30">
+
+        <!-- Player -->
+        <VBox alignment="CENTER" spacing="12">
+            <Label text="Player" styleClass="status-label" />
+            <TextField fx:id="p1Name" promptText="Enter name..."
+                       style="-fx-background-color: #16213e; -fx-text-fill: white; -fx-prompt-text-fill: gray;
+                              -fx-border-color: #e94560; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 8 12 8 12;" />
+            <Label text="●" style="-fx-text-fill: #e94560; -fx-font-size: 40px;
+                                   -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.7), 10, 0, 0, 0);" />
+        </VBox>
+
+        <!-- AI -->
+        <VBox alignment="CENTER" spacing="12">
+            <Label text="AI" styleClass="status-label" />
+            <ComboBox fx:id="aiDifficulty"
+                      style="-fx-background-color: #16213e; -fx-text-fill: white;
+                             -fx-border-color: #f5c518; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 4 8 4 8;" />
+            <Label text="●" style="-fx-text-fill: #f5c518; -fx-font-size: 40px;
+                                   -fx-effect: dropshadow(gaussian, rgba(245,197,24,0.7), 10, 0, 0, 0);" />
+        </VBox>
+
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="20">
+        <Button text="Back" styleClass="confirm-button"
+                style="-fx-background-color: linear-gradient(#3a3a5c, #2a2a4c);"
+                onAction="#onBack" />
+        <Button text="Play !" styleClass="confirm-button"
+                onAction="#onPlay" />
+    </HBox>
+
+</VBox>

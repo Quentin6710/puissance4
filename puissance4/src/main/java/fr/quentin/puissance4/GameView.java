@@ -15,7 +15,7 @@ public class GameView extends Application {
     @Override
     public void start(@SuppressWarnings("exports") Stage s) throws IOException {
         stage=s;
-        setRoot("primary","");
+        setRoot("gameset","");
     }
 
     static void setRoot(String fxml) throws IOException {

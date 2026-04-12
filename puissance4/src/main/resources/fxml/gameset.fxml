@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="30" prefHeight="350" prefWidth="500"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/10.0.2-internal"
+      fx:controller="fr.quentin.puissance4.GameSet"
+      stylesheets="@../styles/Styles.css"
+      style="-fx-padding: 40; -fx-background-color: #1a1a2e;">
+
+    <Label text="Connect Four" styleClass="title-label" />
+
+    <HBox alignment="CENTER" spacing="20">
+        <ToggleButton fx:id="btnHumanVsHuman" text="Human vs Human"
+                      styleClass="toggle-button"
+                      onAction="#onModeSelected" prefWidth="160" prefHeight="70" />
+        <ToggleButton fx:id="btnHumanVsAI" text="Human vs AI"
+                      styleClass="toggle-button"
+                      onAction="#onModeSelected" prefWidth="160" prefHeight="70" />
+    </HBox>
+
+    <Button fx:id="btnConfirm" text="Confirm"
+            styleClass="confirm-button"
+            prefWidth="200" prefHeight="45"
+            onAction="#onConfirm" />
+
+</VBox>
