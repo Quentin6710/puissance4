@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Built-By: quent
-Build-Jdk: 21.0.10
-Main-Class: fr.quentin.puissance4.MainApp
-Created-By: Maven Integration for Eclipse
-
