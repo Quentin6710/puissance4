@@ -25,8 +25,8 @@ public class PlayerSetupHvH implements Initializable {
     }
 
     @FXML
-    public void onPlay(ActionEvent event) {
-        // on verra plus tard
+    public void onPlay(ActionEvent event) throws IOException {
+    	GameView.setRoot("game");
     }
 
 }
