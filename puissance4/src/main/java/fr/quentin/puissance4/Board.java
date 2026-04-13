@@ -21,7 +21,7 @@ public class Board {
 			for(int j=0; j< this.NB_COLS; j++) {
 				grid[i][j] = null;
 				
-			}
+			}	
 		}
 	}
 	
@@ -46,7 +46,7 @@ public class Board {
 		return hasWon(player, row, column);
 		
 	}
-	
+		
 	public int getRowToPlace(int column) {
 		int i=this.NB_ROWS-1;
 		//from bottom to top

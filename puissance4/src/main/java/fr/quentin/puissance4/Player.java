@@ -1,11 +1,9 @@
 package fr.quentin.puissance4;
 
-import java.awt.Color;
-import java.util.Map;
 
 public class Player {
 	private String name;
-	private Color color;
+	private String color;
 	private boolean isAi;
 	private int nbPlay = 0;
 	
@@ -15,19 +13,13 @@ public class Player {
 		this.isAi = isAi;
 
 	}
-	
+		
 	public void setName(String name) {
 		this.name = name;
 	}
 	
 	public void setColor(String color) {
-	    Map<String, Color> colors = Map.of(
-	            "red",   Color.RED,
-	            "yellow",Color.YELLOW
-	    );
-		if(colors.get(color) != null) {
-			this.color = colors.get(color.toLowerCase());
-		}
+		this.color = color;
 	}
 	
 	public void setIsAi(boolean isAi) {
@@ -43,7 +35,7 @@ public class Player {
 	}
 	
 	public String getColor() {
-		return this.color.toString();
+		return this.color;
 	}
 	
 	public boolean IsAi() {

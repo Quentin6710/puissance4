@@ -9,37 +9,30 @@ public class Game {
 	private Player player2;
 	private Player currentPlayer;
 	private Player winner;
-	private Scanner scanner = new Scanner(System.in);
 	
 	public Game(){
 		
 	}
 	
-	public void start(int rows, int cols, String p1Name, String p1Color, boolean p1isAi, String p2Name, String p2Color, boolean p2isAi) {
-		this.board = new Board(rows, cols);
+	public void start(String p1Name, String p1Color, boolean p1isAi, String p2Name, String p2Color, boolean p2isAi) {
+		this.board = new Board(6, 7);
 		this.player1 = new Player(p1Name, p1Color, p1isAi);
 		this.player2 = new Player(p2Name, p2Color, p2isAi);
+		
+		System.out.println("player1 = " + player1);
+		System.out.println("player2 = " + player2);
+		System.out.println("currentPlayer = " + currentPlayer);
 		
 		Random rand = new Random();
 		currentPlayer = rand.nextBoolean() ? player1 : player2;
 	}
 	
-	public void playMove(Player player) {
-	    boolean validMove = false;
-	    while (!validMove) {
-	        try {
-	            System.out.println("Pick a column");
-	            String res = scanner.nextLine();
-	            int col = Integer.parseInt(res);
-	            this.winner = board.placeToken(col, player);
-	            currentPlayer.setNbPlay(currentPlayer.getNbPlay()+1);
-	            validMove = true;
-	        } catch (InvalidMoveException e) {
-	            System.out.println("Invalid move, try again : " + e.getMessage());
-	        }
-	    }
-	}
-	
+	public void playMove(Player player, int col) throws InvalidMoveException {
+	    this.winner = board.placeToken(col, player);
+	    currentPlayer.setNbPlay(currentPlayer.getNbPlay()+1);
+	    switchPlayer();
+	}	
+		
 	public void switchPlayer() {
 		if(currentPlayer == player1) {
 			currentPlayer = player2;
@@ -65,6 +58,11 @@ public class Game {
 		return this.currentPlayer;
 	}
 	
+	public Board getBoard() {
+		return this.board;
+	}
+	
+	/*
 	public static void main(String[] args) {
 		//pick your game mode, either human vs human or human vs ai
 		// if ai select difficulty mode
@@ -77,5 +75,6 @@ public class Game {
 		System.out.println("The winner is : "+game.winner.getName());
 		System.out.println("With "+game.winner.getNbPlay()+" plays");
 	}
+	*/
 
 }

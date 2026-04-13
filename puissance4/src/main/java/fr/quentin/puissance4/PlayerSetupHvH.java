@@ -26,7 +26,12 @@ public class PlayerSetupHvH implements Initializable {
 
     @FXML
     public void onPlay(ActionEvent event) throws IOException {
-    	GameView.setRoot("game");
+    	if (!p1Name.getText().isEmpty() && !p2Name.getText().isEmpty()) {
+    		GameSession.player1 = new Player(p1Name.getText(), "red", false);
+    		GameSession.player2 = new Player(p2Name.getText(), "yellow", false);
+        	GameView.setRoot("game");
+    	}
+
     }
 
 }

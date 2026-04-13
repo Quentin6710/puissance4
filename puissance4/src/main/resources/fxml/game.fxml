@@ -3,24 +3,32 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="15" prefHeight="720" prefWidth="1280"
+<VBox alignment="CENTER" spacing="15" prefHeight="750" prefWidth="1280"
       xmlns:fx="http://javafx.com/fxml/1"
       xmlns="http://javafx.com/javafx/10.0.2-internal"
       fx:controller="fr.quentin.puissance4.GameController"
       stylesheets="@../styles/Styles.css"
       style="-fx-padding: 20; -fx-background-color: #1a1a2e;">
 
-    <!-- Header : mode + joueurs -->
+<HBox alignment="CENTER" style="-fx-padding: 0 20 0 20;">
+    <Button fx:id="btnRestart" text="Menu"
+           styleClass="btn-restart"
+           style="-fx-font-size: 14px;" />
+    <Region HBox.hgrow="ALWAYS" />
     <Label fx:id="lblHeader" text="Player1 vs Player2"
            styleClass="title-label"
            style="-fx-font-size: 22px;" />
+    <Region HBox.hgrow="ALWAYS" />
+    <Button fx:id="btnPlay" text="Play"
+           styleClass="btn-play"
+           style="-fx-font-size: 14px;" />
+</HBox>
+	
 
-    <!-- Grille de jeu (flèches + jetons générés en Java) -->
     <GridPane fx:id="boardGrid" alignment="CENTER"
               styleClass="board-grid"
               hgap="10" vgap="10" />
 
-    <!-- Statut : à qui le tour -->
     <Label fx:id="lblStatus" text="Player 1's turn"
            styleClass="status-label" />
 
